@@ -45,9 +45,9 @@ Use two trailing spaces
 on the right  
 to create linebreak tags  
 
-Finally, horizontal lines
+horizontal lines
 ----
-****
+
 **두꺼운글씨**  
 이모티콘 :relaxed:  
 [Markdown Cheatsheet](http://www.jekyllnow.com/Markdown-Style-Guide/)  
