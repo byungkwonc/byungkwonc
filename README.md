@@ -48,6 +48,11 @@ to create linebreak tags
 horizontal lines
 ----
 
+| 항목 | 가격 | 개수 |
+|:----|:----:|----:|
+| 라면 | 800원 | 10개 |
+| 과자 | 900원 | 20개 |
+
 **두꺼운글씨**  
 이모티콘 :relaxed:  
 [Markdown Cheatsheet](http://www.jekyllnow.com/Markdown-Style-Guide/)  
