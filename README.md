@@ -8,29 +8,26 @@
 
 # 마크다운 간략 사용
 ## 링크방법
-[표시링크](https://github.com/byungkwonc)
-그냥링크 <https://byungkwonc.github.io>
+### [표시링크](https://github.com/byungkwonc)
+
+### 그냥링크 <https://byungkwonc.github.io>
 ## 인용글
 > 인용글
 > 1. 인용글의 번호 목록
 > 2. 인용글의 번호 목록
 > 3. 인용글의 번호 목록
-
 ## 목록
 ### 글머리 기호 목록
 - 글머리 기호 목록
 - 글머리 기호 목록
 - 글머리 기호 목록
-
 ### 번호 목록
 1. 번호 목록
 2. 번호 목록
 3. 번호 목록
-
 ## 기타
 ### **두꺼운글씨**
 ### 이모티콘 :relaxed:
 ### [Markdown Cheatsheet](http://www.jekyllnow.com/Markdown-Style-Guide/)
-
 ### 이미지
 ![Jekyll Now Theme Screenshot](/images/jekyll-now-theme-screenshot.jpg "Jekyll Now Theme Screenshot")
