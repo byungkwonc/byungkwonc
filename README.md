@@ -7,14 +7,14 @@
 5. Commit any changes and push everything to the master branch of your GitHub user repository. GitHub Pages will then rebuild and serve your website.
 
 # 마크다운 간략 사용
-## Header 2 (H1 is reserved for post titles)##
+## Header 2 (H1 is reserved for post titles)
 ### Header 3
 #### Header 4
 
-A link to [Jekyll Now](http://github.com/barryclark/jekyll-now/). A big ass literal link <http://github.com/barryclark/jekyll-now/>
+A link to [byungkwonc.github.io](http://byungkwonc.github.io/). A big ass literal link <http://byungkwonc.github.io/>
 
-An image, located within /images
-![an image alt text]({{ site.baseurl }}/images/jekyll-logo.png "an image title")
+An image, located within /images  
+![an image alt text](/images/jekyll-logo.png "an image title")
 
 * A bulletted list
 - alternative syntax 1
