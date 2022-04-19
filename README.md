@@ -7,27 +7,47 @@
 5. Commit any changes and push everything to the master branch of your GitHub user repository. GitHub Pages will then rebuild and serve your website.
 
 # 마크다운 간략 사용
-## 링크방법
-### [표시링크](https://github.com/byungkwonc)
+## Header 2 (H1 is reserved for post titles)##
+### Header 3
+#### Header 4
 
-### 그냥링크 <https://byungkwonc.github.io>
-## 인용글
-> 인용글
-> 1. 인용글의 번호 목록
-> 2. 인용글의 번호 목록
-> 3. 인용글의 번호 목록
-## 목록
-### 글머리 기호 목록
-- 글머리 기호 목록
-- 글머리 기호 목록
-- 글머리 기호 목록
-### 번호 목록
-1. 번호 목록
-2. 번호 목록
-3. 번호 목록
-## 기타
-### **두꺼운글씨**
-### 이모티콘 :relaxed:
-### [Markdown Cheatsheet](http://www.jekyllnow.com/Markdown-Style-Guide/)
-### 이미지
-![Jekyll Now Theme Screenshot](/images/jekyll-now-theme-screenshot.jpg "Jekyll Now Theme Screenshot")
+A link to [Jekyll Now](http://github.com/barryclark/jekyll-now/). A big ass literal link <http://github.com/barryclark/jekyll-now/>
+
+An image, located within /images
+![an image alt text]({{ site.baseurl }}/images/jekyll-logo.png "an image title")
+
+* A bulletted list
+- alternative syntax 1
++ alternative syntax 2
+  - an indented list item
+
+1. An
+2. ordered
+3. list
+
+Inline markup styles:
+
+- _italics_
+- **bold**
+- `code()`
+
+> Blockquote
+>> Nested Blockquote
+
+Syntax highlighting can be used with triple backticks, like so:
+
+```javascript
+/* Some pointless Javascript */
+var rawr = ["r", "a", "w", "r"];
+```
+
+Use two trailing spaces  
+on the right  
+to create linebreak tags  
+
+Finally, horizontal lines
+----
+****
+**두꺼운글씨**  
+이모티콘 :relaxed:  
+[Markdown Cheatsheet](http://www.jekyllnow.com/Markdown-Style-Guide/)  
