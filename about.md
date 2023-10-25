@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-IT Manager @ Hiconsy
+IT Manager
 
 ### More Information
 
