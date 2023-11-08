@@ -4,7 +4,7 @@
 <html>
   <head>
     <title>
-	ContentManagement :: byungkwonc&#39;s blog
+	about :: byungkwonc&#39;s blog
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -13,7 +13,7 @@
 
 
 
-<title>ContentManagement :: byungkwonc&#39;s blog</title>
+<title>about :: byungkwonc&#39;s blog</title>
 
 <link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
 
@@ -62,7 +62,7 @@ if (!doNotTrack) {
     
   </head>
 
-  <body data-url="/post/contentmanagement/"
+  <body data-url="/about/"
 
   class="">
 
@@ -180,7 +180,7 @@ if (!doNotTrack) {
     </li>
     
 
-    <li data-nav-id="https://byungkwonc.github.io/about/" class="dd-item
+    <li data-nav-id="https://byungkwonc.github.io/about/" class="dd-item active
         item_level_$level
         ">
 
@@ -195,7 +195,7 @@ if (!doNotTrack) {
     </li>
     
 
-    <li data-nav-id="https://byungkwonc.github.io/post/" class="dd-item parent active
+    <li data-nav-id="https://byungkwonc.github.io/post/" class="dd-item
         item_level_$level
         ">
 
@@ -227,14 +227,12 @@ if (!doNotTrack) {
       <section class="page ">
       
 	
+		
     
     
     <nav id="ariane" aria-label="breadcrumb">
       <ol class="ariane">
         
-  
-  	
-		
   
   	
 	<li >
@@ -244,17 +242,9 @@ if (!doNotTrack) {
     </li>
 	
   
-    <li class="">
-      <a class="text-link" href="/post/">
-        GettingStart
-      </a>
-    </li>
-	
-  	
-  
     <li class="active">
       
-        ContentManagement
+        about
       
     </li>
 
@@ -275,21 +265,13 @@ if (!doNotTrack) {
 		
 
 		
-			<h1>GettingStart<span>ContentManagement</span></h1>
+			<h1>about</h1>
         
 
-			
-			
+		
+										
 		
 
-		
-				<nav class="subpages">
-	            		
-	        			
-	            	<li class="active">
-	            		<a title="$pagetitle" href="/post/contentmanagement/">ContentManagement</a>
-	            	</li>
-	        	</nav> 
 		
 	
 
@@ -312,110 +294,7 @@ if (!doNotTrack) {
 
 
 	<div class="content">
-	    <h1 ref="컨텐츠-구성httpsgohugoiocontent-managementorganization" ><a href="https://gohugo.io/content-management/organization/">컨텐츠 구성</a></h1><a class="anchor" id="컨텐츠-구성httpsgohugoiocontent-managementorganization"></a>
-<ul>
-<li>section
-<ul>
-<li>content/ 내의 최상위 디렉터리 이거나, _index.md파일이 있는 content/ 하위 디렉터리</li>
-<li>default contenttype은 content item이 있는 section에 의해 결정</li>
-<li>section은 content/ 디렉터리의 위치에 의해 결정</li>
-<li>section은 font matter에 의해 지정되거나 재정의 되지 않음</li>
-</ul>
-</li>
-</ul>
-<pre tabindex="0"><code>(root)
-└── content/
-    └── README.md
-    ├── post/                       // &lt;-- section (top-level directory)
-    |   ├── GettingStart.md
-    |   └── ContentManagement.md
-    └── example/                      // &lt;-- section (top-level directory) 
-        ├── example-1/                // &lt;-- section (_index.md 파일 있음)
-        |   ├── example-1-1.md
-        |   └── example-1-2.md
-        └── _index.md
-</code></pre><ul>
-<li>slug
-<ul>
-<li>URL 경로의 마지막 분절</li>
-<li>파일명이나 font matter에 정의된 slug 값에 의해 재정의 됨</li>
-</ul>
-</li>
-<li>path
-<ul>
-<li>section 부터 slug 직전 까지 경로</li>
-</ul>
-</li>
-<li>url
-<ul>
-<li>전체 URL 경로</li>
-<li>파일 경로나 font matter에 정의된 url 값에 의해 재정의 됨</li>
-</ul>
-</li>
-</ul>
-<pre tabindex="0"><code>content/posts/_index.md
-
-         url
-       ⊢--^-⊣
-        path    slug
-       ⊢--^-⊣⊢---^---⊣
-           filepath
-       ⊢------^------⊣
-
-https://example.com/posts/index.html
-                     url (&#34;/posts/&#34;)
-                    ⊢-^-⊣
-       baseurl      section (&#34;posts&#34;)
-⊢--------^---------⊣⊢-^-⊣
-        permalink
-⊢----------^-------------⊣
-</code></pre><h1 ref="컨텐츠-경로-재정의" >컨텐츠 경로 재정의</h1><a class="anchor" id="컨텐츠-경로-재정의"></a>
-<ul>
-<li>
-<p>slug</p>
-<ul>
-<li>
-<p>font matter에 slug 추가</p>
-<ul>
-<li>content/post/old-post.md -&gt; <a href="https://example.com/post/new-post/">https://example.com/post/new-post/</a></li>
-</ul>
-<pre tabindex="0"><code>+++
-title =&#34;New Post&#34;
-slug =&#34;new-post&#34;
-+++
-</code></pre></li>
-</ul>
-</li>
-<li>
-<p>url</p>
-<ul>
-<li>
-<p>font matter에 url 추가</p>
-<ul>
-<li>content/post/old-post.md -&gt; <a href="https://example.com/article/new-article/">https://example.com/article/new-article/</a></li>
-</ul>
-<pre tabindex="0"><code>+++
-title =&#34;New Article&#34;
-slug =&#34;/article/new-article&#34;
-+++
-</code></pre></li>
-</ul>
-</li>
-</ul>
-<h1 ref="shortcodeshttpsgohugoiocontent-managementshortcodesuse-hugos-built-in-shortcodes" ><a href="https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes">Shortcodes</a></h1><a class="anchor" id="shortcodeshttpsgohugoiocontent-managementshortcodesuse-hugos-built-in-shortcodes"></a>
-<ul>
-<li>내장 혹은 사용자 정의된 템플릿을 호출하는 컨텐트 파일내의 간단한 조각을 의미</li>
-<li>
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/2xkNJL4gJ9E" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
-</li>
-<li><figure><img src="https://yt3.ggpht.com/AqqsRvRW2gJdF1zSQdTpo1_SF-hl_XLvgAFfS4wnABzf8ZjOXCTJSu8aG2tjwBxWGjMuUUIxuFY=s48-c-k-c0x00ffffff-no-rj"/><figcaption>
-            <h4>Giraffe Academy</h4>
-        </figcaption>
-</figure>
-</li>
-</ul>
+	    <p>How You Like That</p>
 
 		</div>
 
@@ -428,6 +307,7 @@ slug =&#34;/article/new-article&#34;
 	<div class="chevrons">
 		
 	</div>
+	
 	
 
       </section>
@@ -448,7 +328,7 @@ slug =&#34;/article/new-article&#34;
     <label><i class="fas fa-align-right"></i>&nbsp;&nbsp;What&#39;s on this page</label>
     <nav>
         <ul >
-            <li><a href="/post/contentmanagement/">ContentManagement</a></li>
+            <li><a href="/about/">about</a></li>
         </ul>
     </nav>
     <nav id="TableOfContents"></nav>
