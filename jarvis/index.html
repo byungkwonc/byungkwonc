@@ -8,7 +8,7 @@
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2023-11-17T13:13:58 KST">
+<meta name="revised" content="2023-11-17T13:48:48 KST">
 <meta name="description" content="">
 
 
@@ -308,7 +308,12 @@ if (!doNotTrack) {
 		</span>
 		<nav id="TableOfContents">
   <ul>
-    <li><a href="#jarvis">J.A.R.V.I.S</a></li>
+    <li><a href="#jarvis">J.A.R.V.I.S</a>
+      <ul>
+        <li><a href="#client">Client</a></li>
+        <li><a href="#server">Server</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 	</div>
@@ -322,6 +327,76 @@ if (!doNotTrack) {
 
 	<div class="content">
 	    <h2 ref="jarvis" >J.A.R.V.I.S</h2><a class="anchor" id="jarvis"></a>
+<h3 ref="client" >Client</h3><a class="anchor" id="client"></a>
+<ul>
+<li>Slack Bot</li>
+<li>Create App
+<ul>
+<li><a href="https://api.slack.com/apps/">https://api.slack.com/apps/</a></li>
+</ul>
+</li>
+<li>Settings &gt; Basic Information
+<ul>
+<li>App Name : chatGptBot</li>
+<li>App-Level Tokens
+<ul>
+<li>Token Name : AppToken (can change)</li>
+<li>Scope : connections:write, authorizations:read,app_configurations:write</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Features &gt; OAuth &amp; Permissions
+<ul>
+<li>Redirect URLs : <a href="https://oauth.pstmn.io/v1/browser-callback">https://oauth.pstmn.io/v1/browser-callback</a></li>
+<li>Scopes &gt; Bot Token Scopes
+<ul>
+<li>app_mentions:read, channels:history, chat:write, chat:write.customize, groups:history, im:history, im:read, im:write, mpim:history</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Features &gt; Event Subscriptions
+<ul>
+<li>Enable Events
+<ul>
+<li>Request URL : <a href="https://slackbot-chatgpt.vercel.app/slack">https://slackbot-chatgpt.vercel.app/slack</a></li>
+</ul>
+</li>
+<li>Subscribe to bot events
+<ul>
+<li>Event Name : app_mention</li>
+<li>Required Scope : app_mentions:read</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Features &gt; OAuth &amp; Permissions
+<ul>
+<li>Install to Workspace
+<ul>
+<li>Bot User OAuth Token -&gt; copy!. will use Server side</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Add to Slack Workspace App</li>
+</ul>
+<h3 ref="server" >Server</h3><a class="anchor" id="server"></a>
+<ul>
+<li>development
+<ul>
+<li>python, fastapi, openai, slack-sdk</li>
+<li>local : <code>uvicorn app.main:app --reload</code></li>
+</ul>
+</li>
+<li>deploy
+<ul>
+<li><a href="https://slackbot-chatgpt.vercel.app/">https://slackbot-chatgpt.vercel.app/</a></li>
+<li><img src="/static/images/chatGptBot_Slack.png" alt=""></li>
+</ul>
+</li>
+</ul>
 
 		</div>
 
@@ -360,7 +435,12 @@ if (!doNotTrack) {
     </nav>
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#jarvis">J.A.R.V.I.S</a></li>
+    <li><a href="#jarvis">J.A.R.V.I.S</a>
+      <ul>
+        <li><a href="#client">Client</a></li>
+        <li><a href="#server">Server</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 </div>
