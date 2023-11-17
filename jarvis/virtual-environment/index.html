@@ -4,7 +4,7 @@
 <html>
   <head>
     <title>
-	about :: byungkwonc&#39;s blog
+	가상환경 구성 :: byungkwonc&#39;s blog
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -13,7 +13,7 @@
 
 
 
-<title>about :: byungkwonc&#39;s blog</title>
+<title>가상환경 구성 :: byungkwonc&#39;s blog</title>
 
 <link rel="shortcut icon" href='/images/favicon.png' type="image/x-icon" />
 
@@ -62,7 +62,7 @@ if (!doNotTrack) {
     
   </head>
 
-  <body data-url="/about/"
+  <body data-url="/jarvis/virtual-environment/"
 
   class="">
 
@@ -165,7 +165,7 @@ if (!doNotTrack) {
 
 <ul class="menu">
 
-    <li data-nav-id="https://byungkwonc.github.io/jarvis/" class="dd-item
+    <li data-nav-id="https://byungkwonc.github.io/jarvis/" class="dd-item parent active
         item_level_$level
         ">
 
@@ -195,7 +195,7 @@ if (!doNotTrack) {
     </li>
     
 
-    <li data-nav-id="https://byungkwonc.github.io/about/" class="dd-item active
+    <li data-nav-id="https://byungkwonc.github.io/about/" class="dd-item
         item_level_$level
         ">
 
@@ -242,12 +242,14 @@ if (!doNotTrack) {
       <section class="page ">
       
 	
-		
     
     
     <nav id="ariane" aria-label="breadcrumb">
       <ol class="ariane">
         
+  
+  	
+		
   
   	
 	<li >
@@ -257,9 +259,17 @@ if (!doNotTrack) {
     </li>
 	
   
+    <li class="">
+      <a class="text-link" href="/jarvis/">
+        Jarvis
+      </a>
+    </li>
+	
+  	
+  
     <li class="active">
       
-        about
+        가상환경 구성
       
     </li>
 
@@ -280,13 +290,21 @@ if (!doNotTrack) {
 		
 
 		
-			<h1>about</h1>
+			<h1>Jarvis<span>가상환경 구성</span></h1>
         
 
-		
-										
+			
+			
 		
 
+		
+				<nav class="subpages">
+	            		
+	        			
+	            	<li class="active">
+	            		<a title="$pagetitle" href="/jarvis/virtual-environment/">가상환경 구성</a>
+	            	</li>
+	        	</nav> 
 		
 	
 
@@ -298,7 +316,16 @@ if (!doNotTrack) {
   			Jump to Section
   			<i style=";" class="fas fa-chevron-right"></i>
 		</span>
-		<nav id="TableOfContents"></nav>
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#docker-개발환경">Docker 개발환경</a></li>
+        <li><a href="#orbstack">OrbStack</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 	</div>
 	
 	
@@ -309,8 +336,75 @@ if (!doNotTrack) {
 
 
 	<div class="content">
-	    <p>How You Like That</p>
-
+	    <h3 ref="docker-개발환경" >Docker 개발환경</h3><a class="anchor" id="docker-개발환경"></a>
+<h4 ref="host-docker-cli" >[Host] docker cli</h4><a class="anchor" id="host-docker-cli"></a>
+<ul>
+<li>설치</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">    brew install docker
+</span></span></code></pre></div><h4 ref="guestvm-linux-docker-engine-community-edition" >[GuestVM] linux docker engine (community edition)</h4><a class="anchor" id="guestvm-linux-docker-engine-community-edition"></a>
+<ul>
+<li><a href="https://github.com/lima-vm/lima">lima</a> 설치</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">    brew install lima
+</span></span><span class="line"><span class="cl">    limactl --version
+</span></span><span class="line"><span class="cl">    <span class="c1"># limactl version 0.18.0</span>
+</span></span></code></pre></div><ul>
+<li>Docker Engine CE가 설치된 Ubuntu VM 설정파일 다운로드</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">    wget https://raw.githubusercontent.com/lima-vm/lima/master/examples/docker.yaml
+</span></span><span class="line"><span class="cl">    cat ./docker.yaml
+</span></span></code></pre></div><ul>
+<li>lima docker.yaml 파일 기반의 VM 생성</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">    limactl start ./docker.yaml
+</span></span></code></pre></div><ul>
+<li>생성한 VM 조회 (VM명은 파일명 그대로 docker)</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">    limactl list
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">#NAME      STATUS     SSH                VMTYPE    ARCH       CPUS    MEMORY    DISK      DIR</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#docker    Running    127.0.0.1:52904    qemu      aarch64    4       4GiB      100GiB    ~/.lima/docker</span>
+</span></span></code></pre></div><ul>
+<li>docker VM에 ssh 접속 / 명령어 전달</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">    <span class="c1"># limactl shell ${INSTANCE} [COMMAND...]</span>
+</span></span><span class="line"><span class="cl">    limactl shell docker <span class="c1"># 접속</span>
+</span></span><span class="line"><span class="cl">    limactl shell docker ls -al <span class="c1"># 명령어 전달</span>
+</span></span></code></pre></div><ul>
+<li>VM과 ${HOME} 디렉토리를 공유하는지 확인</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">    ls /Users
+</span></span><span class="line"><span class="cl">    limactl shell docker /Users
+</span></span></code></pre></div><ul>
+<li>VM 외부에서 호스트 docker cli를 연결</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">    <span class="nb">export</span> <span class="nv">DOCKER_HOST</span><span class="o">=</span><span class="k">$(</span>limactl list docker --format <span class="s1">&#39;unix://{{.Dir}}/sock/docker.sock&#39;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl">    docker info
+</span></span><span class="line"><span class="cl">        <span class="c1"># lima-docker인지 확인</span>
+</span></span><span class="line"><span class="cl">        Operating System: Ubuntu 22.04.3 LTS
+</span></span><span class="line"><span class="cl">        OSType: linux
+</span></span><span class="line"><span class="cl">        Architecture: aarch64
+</span></span><span class="line"><span class="cl">        CPUs: <span class="m">4</span>
+</span></span><span class="line"><span class="cl">        Total Memory: 3.819GiB
+</span></span><span class="line"><span class="cl">        Name: lima-docker
+</span></span><span class="line"><span class="cl">        Docker Root Dir: /home/byungkwonc.linux/.local/share/docker
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    docker run hello-world
+</span></span><span class="line"><span class="cl">        <span class="c1"># Hello from Docker!</span>
+</span></span></code></pre></div><ul>
+<li>생성한 VM 중지 및 삭제</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">    limactl stop docker
+</span></span><span class="line"><span class="cl">    limactl delete docker
+</span></span></code></pre></div><h3 ref="orbstack" >OrbStack</h3><a class="anchor" id="orbstack"></a>
+<h4 ref="download" >Download</h4><a class="anchor" id="download"></a>
+<ul>
+<li><a href="https://orbstack.dev/download">Download OrbStack</a> and open it, no installation needed.</li>
+</ul>
+<h4 ref="homebrew" >Homebrew</h4><a class="anchor" id="homebrew"></a>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">    brew install orbstack
+</span></span></code></pre></div>
 		</div>
 
 
@@ -322,7 +416,6 @@ if (!doNotTrack) {
 	<div class="chevrons">
 		
 	</div>
-	
 	
 
       </section>
@@ -343,10 +436,19 @@ if (!doNotTrack) {
     <label><i class="fas fa-align-right"></i>&nbsp;&nbsp;What&#39;s on this page</label>
     <nav>
         <ul >
-            <li><a href="/about/">about</a></li>
+            <li><a href="/jarvis/virtual-environment/">가상환경 구성</a></li>
         </ul>
     </nav>
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#docker-개발환경">Docker 개발환경</a></li>
+        <li><a href="#orbstack">OrbStack</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 </div>
 
 		
@@ -364,7 +466,7 @@ if (!doNotTrack) {
 			
 		      <li>
 		          <i class='fas fa-calendar'></i>
-		          Last update on 08 November 2023
+		          Last update on 17 November 2023
 		      </li>
 		    
 		    

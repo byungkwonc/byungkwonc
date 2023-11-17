@@ -8,6 +8,15 @@
     <language>en-us</language>
     <lastBuildDate>Wed, 25 Oct 2023 18:40:32 +0900</lastBuildDate><atom:link href="https://byungkwonc.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>가상환경 구성</title>
+      <link>https://byungkwonc.github.io/jarvis/virtual-environment/</link>
+      <pubDate>Wed, 08 Nov 2023 18:08:48 +0900</pubDate>
+      
+      <guid>https://byungkwonc.github.io/jarvis/virtual-environment/</guid>
+      <description>Docker 개발환경 [Host] docker cli 설치 brew install docker [GuestVM] linux docker engine (community edition) lima 설치 brew install lima limactl --version # limactl version 0.18.0 Docker Engine CE가 설치된 Ubuntu VM 설정파일 다운로드 wget https://raw.githubusercontent.com/lima-vm/lima/master/examples/docker.yaml cat ./docker.yaml lima docker.yaml 파일 기반의 VM 생성 limactl start ./docker.yaml 생성한 VM 조회 (VM명은 파일명 그대로 docker) limactl list #NAME STATUS SSH VMTYPE ARCH CPUS MEMORY DISK DIR #docker Running 127.0.0.1:52904 qemu aarch64 4 4GiB 100GiB ~/.</description>
+    </item>
+    
+    <item>
       <title>ContentManagement</title>
       <link>https://byungkwonc.github.io/post/contentmanagement/</link>
       <pubDate>Wed, 01 Nov 2023 15:40:00 +0900</pubDate>
